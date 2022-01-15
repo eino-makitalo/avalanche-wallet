@@ -194,7 +194,7 @@ const network_module: Module<NetworkState, RootState> = {
                 'https://explorer.avax-test.network',
                 true
             )
-
+            let shion = new AvaNetwork('Shion', 'http://mn1.dev.benqi.fi:9650', 12345, '', '', true)
             // Load custom networks if any
             try {
                 await dispatch('load')
@@ -204,6 +204,7 @@ const network_module: Module<NetworkState, RootState> = {
 
             commit('addNetwork', mainnet)
             commit('addNetwork', fuji)
+            commit('addNetwork', shion)
 
             try {
                 let isSet = await dispatch('loadSelectedNetwork')
